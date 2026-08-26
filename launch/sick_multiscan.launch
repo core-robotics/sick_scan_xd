@@ -13,8 +13,8 @@
     -->
     <!-- Launch multiScan -->
     <!-- env name="ROSCONSOLE_CONFIG_FILE" value="/tmp/rosconsole_loglevel_warn.conf" / -->
-    <arg name="hostname" default="192.168.0.1"/>                                    <!-- IP address of sensor -->
-    <arg name="udp_receiver_ip" default=""/>                                        <!-- UDP destination IP address (ip address of udp receiver) -->
+    <arg name="hostname" default="192.168.0.11"/>                                    <!-- IP address of sensor -->
+    <arg name="udp_receiver_ip" default="192.168.0.210"/>                                        <!-- UDP destination IP address (ip address of udp receiver) -->
     <arg name="nodename" default="multiScan"/>
     <arg name="publish_frame_id" default="world" />                                 <!-- frame id of ros Laserscan messages, default: "world_<layer-id>" -->
     <arg name="publish_laserscan_segment_topic" default="scan_segment" />           <!-- topic of ros Laserscan segment messages -->
@@ -219,70 +219,70 @@
         <!-- param name="custom_pointclouds" type="string" value="cloud_unstructured_segments cloud_polar_unstructured_segments cloud_unstructured_fullframe cloud_unstructured_echo1 cloud_unstructured_echo1_segments cloud_unstructured_echo2 cloud_unstructured_echo2_segments cloud_unstructured_echo3 cloud_unstructured_echo3_segments cloud_unstructured_reflector cloud_unstructured_reflector_segments cloud_structured_hires0 cloud_structured_hires0_segments cloud_structured_hires1 cloud_structured_hires1_segments cloud_structured cloud_structured_segments cloud_all_fields_segments cloud_all_fields_fullframe"/ -->
 
         <!-- cloud_unstructured_segments: cartesian coordinates, segmented, all echos, all layers, range filter on, max. 2700 points, mean ca. 1000 points per cloud -->
-        <param name="cloud_unstructured_segments" type="string" value="coordinateNotation=0 updateMethod=1 echos=0,1,2 layers=1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16 reflectors=0,1 infringed=0,1 rangeFilter=0.05,999,1 topic=/cloud_unstructured_segments frameid=world publish=1"/>
+        <param name="cloud_unstructured_segments" type="string" value="coordinateNotation=0 updateMethod=1 echos=0,1,2 layers=1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16 reflectors=0,1 infringed=0,1 rangeFilter=0.05,999,1 topic=/lidar1/cloud_unstructured_segments frameid=world publish=1"/>
         
         <!-- cloud_unstructured_fullframe: cartesian coordinates, fullframe, all echos, all layers, range filter on, max. 32400 points, mean ca. 10000 points per cloud -->
-        <param name="cloud_unstructured_fullframe" type="string" value="coordinateNotation=0 updateMethod=0 echos=0,1,2 layers=1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16 reflectors=0,1 infringed=0,1 rangeFilter=0.05,999,1 topic=/cloud_unstructured_fullframe frameid=world publish=1"/>
+        <param name="cloud_unstructured_fullframe" type="string" value="coordinateNotation=0 updateMethod=0 echos=0,1,2 layers=1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16 reflectors=0,1 infringed=0,1 rangeFilter=0.05,999,1 topic=/lidar1/cloud_unstructured_fullframe frameid=world publish=1"/>
 
         <!-- cloud_polar_unstructured_segments: polar coordinates, segmented, all echos, all layers, range filter on, max. 2700 points, mean ca. 1000 points per cloud -->
-        <param name="cloud_polar_unstructured_segments" type="string" value="coordinateNotation=1 updateMethod=1 echos=0,1,2 layers=1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16 reflectors=0,1 infringed=0,1 rangeFilter=0.05,999,1 topic=/cloud_polar_unstructured_segments frameid=world publish=1"/>
+        <param name="cloud_polar_unstructured_segments" type="string" value="coordinateNotation=1 updateMethod=1 echos=0,1,2 layers=1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16 reflectors=0,1 infringed=0,1 rangeFilter=0.05,999,1 topic=/lidar1/cloud_polar_unstructured_segments frameid=world publish=1"/>
 
         <!-- cloud_polar_unstructured_fullframe: polar coordinates, fullframe, all echos, all layers, range filter on -->
-        <param name="cloud_polar_unstructured_fullframe" type="string" value="coordinateNotation=1 updateMethod=0 echos=0,1,2 layers=1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16 reflectors=0,1 infringed=0,1 rangeFilter=0.05,999,1 topic=/cloud_polar_unstructured_fullframe frameid=world publish=1"/>
+        <param name="cloud_polar_unstructured_fullframe" type="string" value="coordinateNotation=1 updateMethod=0 echos=0,1,2 layers=1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16 reflectors=0,1 infringed=0,1 rangeFilter=0.05,999,1 topic=/lidar1/cloud_polar_unstructured_fullframe frameid=world publish=1"/>
 
         <!-- cloud_unstructured_echo1: cartesian coordinates, fullframe, first echo, all layers, range filter on -->
-        <param name="cloud_unstructured_echo1" type="string" value="coordinateNotation=0 updateMethod=0 echos=0 layers=1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16 reflectors=0,1 infringed=0,1 rangeFilter=0.05,999,1 topic=/cloud_unstructured_echo1 frameid=world publish=1"/>
+        <param name="cloud_unstructured_echo1" type="string" value="coordinateNotation=0 updateMethod=0 echos=0 layers=1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16 reflectors=0,1 infringed=0,1 rangeFilter=0.05,999,1 topic=/lidar1/cloud_unstructured_echo1 frameid=world publish=1"/>
 
         <!-- cloud_unstructured_echo1_segments: cartesian coordinates, segmented, first echo, all layers, range filter on -->
-        <param name="cloud_unstructured_echo1_segments" type="string" value="coordinateNotation=0 updateMethod=1 echos=0 layers=1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16 reflectors=0,1 infringed=0,1 rangeFilter=0.05,999,1 topic=/cloud_unstructured_echo1_segments frameid=world publish=1"/>
+        <param name="cloud_unstructured_echo1_segments" type="string" value="coordinateNotation=0 updateMethod=1 echos=0 layers=1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16 reflectors=0,1 infringed=0,1 rangeFilter=0.05,999,1 topic=/lidar1/cloud_unstructured_echo1_segments frameid=world publish=1"/>
 
         <!-- cloud_unstructured_echo2: cartesian coordinates, fullframe, first echo, all layers, range filter on -->
-        <param name="cloud_unstructured_echo2" type="string" value="coordinateNotation=0 updateMethod=0 echos=1 layers=1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16 reflectors=0,1 infringed=0,1 rangeFilter=0.05,999,1 topic=/cloud_unstructured_echo2 frameid=world publish=1"/>
+        <param name="cloud_unstructured_echo2" type="string" value="coordinateNotation=0 updateMethod=0 echos=1 layers=1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16 reflectors=0,1 infringed=0,1 rangeFilter=0.05,999,1 topic=/lidar1/cloud_unstructured_echo2 frameid=world publish=1"/>
 
         <!-- cloud_unstructured_echo2_segments: cartesian coordinates, segmented, first echo, all layers, range filter on -->
-        <param name="cloud_unstructured_echo2_segments" type="string" value="coordinateNotation=0 updateMethod=1 echos=1 layers=1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16 reflectors=0,1 infringed=0,1 rangeFilter=0.05,999,1 topic=/cloud_unstructured_echo2_segments frameid=world publish=1"/>
+        <param name="cloud_unstructured_echo2_segments" type="string" value="coordinateNotation=0 updateMethod=1 echos=1 layers=1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16 reflectors=0,1 infringed=0,1 rangeFilter=0.05,999,1 topic=/lidar1/cloud_unstructured_echo2_segments frameid=world publish=1"/>
 
         <!-- cloud_unstructured_echo3: cartesian coordinates, fullframe, first echo, all layers, range filter on -->
-        <param name="cloud_unstructured_echo3" type="string" value="coordinateNotation=0 updateMethod=0 echos=2 layers=1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16 reflectors=0,1 infringed=0,1 rangeFilter=0.05,999,1 topic=/cloud_unstructured_echo3 frameid=world publish=1"/>
+        <param name="cloud_unstructured_echo3" type="string" value="coordinateNotation=0 updateMethod=0 echos=2 layers=1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16 reflectors=0,1 infringed=0,1 rangeFilter=0.05,999,1 topic=/lidar1/cloud_unstructured_echo3 frameid=world publish=1"/>
 
         <!-- cloud_unstructured_echo3_segments: cartesian coordinates, segmented, first echo, all layers, range filter on -->
-        <param name="cloud_unstructured_echo3_segments" type="string" value="coordinateNotation=0 updateMethod=1 echos=2 layers=1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16 reflectors=1 infringed=0,1 rangeFilter=0.05,999,1 topic=/cloud_unstructured_echo3_segments frameid=world publish=1"/>
+        <param name="cloud_unstructured_echo3_segments" type="string" value="coordinateNotation=0 updateMethod=1 echos=2 layers=1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16 reflectors=1 infringed=0,1 rangeFilter=0.05,999,1 topic=/lidar1/cloud_unstructured_echo3_segments frameid=world publish=1"/>
 
         <!-- cloud_unstructured_reflector: cartesian coordinates, fullframe, first echo, all layers, range filter on -->
-        <param name="cloud_unstructured_reflector" type="string" value="coordinateNotation=0 updateMethod=0 echos=0,1,2 layers=1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16 reflectors=1 infringed=0,1 rangeFilter=0.05,999,1 topic=/cloud_unstructured_reflector frameid=world publish=1"/>
+        <param name="cloud_unstructured_reflector" type="string" value="coordinateNotation=0 updateMethod=0 echos=0,1,2 layers=1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16 reflectors=1 infringed=0,1 rangeFilter=0.05,999,1 topic=/lidar1/cloud_unstructured_reflector frameid=world publish=1"/>
 
         <!-- cloud_unstructured_reflector_segments: cartesian coordinates, segmented, first echo, all layers, range filter on -->
-        <param name="cloud_unstructured_reflector_segments" type="string" value="coordinateNotation=0 updateMethod=1 echos=0,1,2 layers=1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16 reflectors=1 infringed=0,1 rangeFilter=0.05,999,1 topic=/cloud_unstructured_reflector_segments frameid=world publish=1"/>
+        <param name="cloud_unstructured_reflector_segments" type="string" value="coordinateNotation=0 updateMethod=1 echos=0,1,2 layers=1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16 reflectors=1 infringed=0,1 rangeFilter=0.05,999,1 topic=/lidar1/cloud_unstructured_reflector_segments frameid=world publish=1"/>
 
         <!-- cloud_structured_hires0: cartesian and polar coordinates, fullframe, all echos, range filter off, high resolution layer 6, fields=x,y,z,i,range,azimuth,elevation, number of points: 2880 x NumEchos x NumSegments -->
-        <param name="cloud_structured_hires0" type="string" value="coordinateNotation=3 updateMethod=0 fields=x,y,z,i,range,azimuth,elevation echos=0,1,2 layers=6 reflectors=0,1 infringed=0,1 rangeFilter=0,999,0 topic=/cloud_structured_hires0 frameid=world publish=1"/>
+        <param name="cloud_structured_hires0" type="string" value="coordinateNotation=3 updateMethod=0 fields=x,y,z,i,range,azimuth,elevation echos=0,1,2 layers=6 reflectors=0,1 infringed=0,1 rangeFilter=0,999,0 topic=/lidar1/cloud_structured_hires0 frameid=world publish=1"/>
 
         <!-- cloud_structured_hires0_segments: cartesian and polar coordinates, segments, all echos, range filter off, high resolution layer 6, fields=x,y,z,i,range,azimuth,elevation -->
-        <param name="cloud_structured_hires0_segments" type="string" value="coordinateNotation=3 updateMethod=1 fields=x,y,z,i,range,azimuth,elevation echos=0,1,2 layers=6 reflectors=0,1 infringed=0,1 rangeFilter=0,999,0 topic=/cloud_structured_hires0_segments frameid=world publish=1"/>
+        <param name="cloud_structured_hires0_segments" type="string" value="coordinateNotation=3 updateMethod=1 fields=x,y,z,i,range,azimuth,elevation echos=0,1,2 layers=6 reflectors=0,1 infringed=0,1 rangeFilter=0,999,0 topic=/lidar1/cloud_structured_hires0_segments frameid=world publish=1"/>
 
         <!-- cloud_structured_hires1: cartesian and polar coordinates, fullframe, all echos, range filter off, high resolution layer 14, fields=x,y,z,i,range,azimuth,elevation, number of points: 2880 x NumEchos x NumSegments -->
-        <param name="cloud_structured_hires1" type="string" value="coordinateNotation=3 updateMethod=0 fields=x,y,z,i,range,azimuth,elevation echos=0,1,2 layers=14 reflectors=0,1 infringed=0,1 rangeFilter=0,999,0 topic=/cloud_structured_hires1 frameid=world publish=1"/>
+        <param name="cloud_structured_hires1" type="string" value="coordinateNotation=3 updateMethod=0 fields=x,y,z,i,range,azimuth,elevation echos=0,1,2 layers=14 reflectors=0,1 infringed=0,1 rangeFilter=0,999,0 topic=/lidar1/cloud_structured_hires1 frameid=world publish=1"/>
 
         <!-- cloud_structured_hires1_segments: cartesian and polar coordinates, segments, all echos, range filter off, high resolution layer 14, fields=x,y,z,i,range,azimuth,elevation -->
-        <param name="cloud_structured_hires1_segments" type="string" value="coordinateNotation=3 updateMethod=1 fields=x,y,z,i,range,azimuth,elevation echos=0,1,2 layers=14 reflectors=0,1 infringed=0,1 rangeFilter=0,999,0 topic=/cloud_structured_hires1_segments frameid=world publish=1"/>
+        <param name="cloud_structured_hires1_segments" type="string" value="coordinateNotation=3 updateMethod=1 fields=x,y,z,i,range,azimuth,elevation echos=0,1,2 layers=14 reflectors=0,1 infringed=0,1 rangeFilter=0,999,0 topic=/lidar1/cloud_structured_hires1_segments frameid=world publish=1"/>
 
         <!-- cloud_structured: cartesian and polar coordinates, fullframe, all echos, range filter off, low resolution layers 1,2,3,4,5,7,8,9,10,11,12,13,15,16, fields=x,y,z,i,range,azimuth,elevation, 12*360*14*3=181440 points per cloud -->
-        <param name="cloud_structured" type="string" value="coordinateNotation=3 updateMethod=0 fields=x,y,z,i,range,azimuth,elevation echos=0,1,2 layers=1,2,3,4,5,7,8,9,10,11,12,13,15,16 reflectors=0,1 infringed=0,1 rangeFilter=0,999,0 topic=/cloud_structured frameid=world publish=1"/>
+        <param name="cloud_structured" type="string" value="coordinateNotation=3 updateMethod=0 fields=x,y,z,i,range,azimuth,elevation echos=0,1,2 layers=1,2,3,4,5,7,8,9,10,11,12,13,15,16 reflectors=0,1 infringed=0,1 rangeFilter=0,999,0 topic=/lidar1/cloud_structured frameid=world publish=1"/>
 
         <!-- cloud_structured_segments: cartesian and polar coordinates, segments, all echos, range filter off, low resolution layers 1,2,3,4,5,7,8,9,10,11,12,13,15,16, fields=x,y,z,i,range,azimuth,elevation, 360*14*3=15120 points per cloud -->
-        <param name="cloud_structured_segments" type="string" value="coordinateNotation=3 updateMethod=1 fields=x,y,z,i,range,azimuth,elevation echos=0,1,2 layers=1,2,3,4,5,7,8,9,10,11,12,13,15,16 reflectors=0,1 infringed=0,1 rangeFilter=0,999,0 topic=/cloud_structured_segments frameid=world publish=1"/>
+        <param name="cloud_structured_segments" type="string" value="coordinateNotation=3 updateMethod=1 fields=x,y,z,i,range,azimuth,elevation echos=0,1,2 layers=1,2,3,4,5,7,8,9,10,11,12,13,15,16 reflectors=0,1 infringed=0,1 rangeFilter=0,999,0 topic=/lidar1/cloud_structured_segments frameid=world publish=1"/>
 
         <!-- cloud_structured: cartesian and polar coordinates, fullframe, all echos, range filter off, low resolution layers 1..16, fields=x,y,z,i,range,azimuth,elevation, 12*360*16*3=181440 points per cloud -->
-        <param name="cloud_structured_multiscan_165" type="string" value="coordinateNotation=3 updateMethod=0 fields=x,y,z,i,range,azimuth,elevation echos=0,1,2 layers=1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16 reflectors=0,1 infringed=0,1 rangeFilter=0,999,0 topic=/cloud_structured frameid=world publish=1"/>
+        <param name="cloud_structured_multiscan_165" type="string" value="coordinateNotation=3 updateMethod=0 fields=x,y,z,i,range,azimuth,elevation echos=0,1,2 layers=1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16 reflectors=0,1 infringed=0,1 rangeFilter=0,999,0 topic=/lidar1/cloud_structured frameid=world publish=1"/>
 
         <!-- cloud_structured_segments: cartesian and polar coordinates, segments, all echos, range filter off, low resolution layers 1..16, fields=x,y,z,i,range,azimuth,elevation, 360*16*3=15120 points per cloud -->
-        <param name="cloud_structured_multiscan_165_segments" type="string" value="coordinateNotation=3 updateMethod=1 fields=x,y,z,i,range,azimuth,elevation echos=0,1,2 layers=1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16 reflectors=0,1 infringed=0,1 rangeFilter=0,999,0 topic=/cloud_structured_segments frameid=world publish=1"/>
+        <param name="cloud_structured_multiscan_165_segments" type="string" value="coordinateNotation=3 updateMethod=1 fields=x,y,z,i,range,azimuth,elevation echos=0,1,2 layers=1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16 reflectors=0,1 infringed=0,1 rangeFilter=0,999,0 topic=/lidar1/cloud_structured_segments frameid=world publish=1"/>
 
         <!-- cloud_all_fields_segments: all fields (x,y,z,i,range,azimuth,elevation,t,ts,lidar_sec,lidar_nsec,ring,layer,echo,reflector), segments, all echos, all layers, range filter off -->
-        <param name="cloud_all_fields_segments" type="string" value="coordinateNotation=3 updateMethod=1 fields=x,y,z,i,range,azimuth,elevation,t,ts,lidar_sec,lidar_nsec,ring,layer,echo,reflector echos=0,1,2 layers=1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16 reflectors=0,1 infringed=0,1 rangeFilter=0,999,0 topic=/cloud_all_fields_segments frameid=world publish=1"/>
+        <param name="cloud_all_fields_segments" type="string" value="coordinateNotation=3 updateMethod=1 fields=x,y,z,i,range,azimuth,elevation,t,ts,lidar_sec,lidar_nsec,ring,layer,echo,reflector echos=0,1,2 layers=1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16 reflectors=0,1 infringed=0,1 rangeFilter=0,999,0 topic=/lidar1/cloud_all_fields_segments frameid=world publish=1"/>
 
         <!-- cloud_all_fields_fullframe: all fields (x,y,z,i,range,azimuth,elevation,t,ts,lidar_sec,lidar_nsec,ring,layer,echo,reflector), fullframe, all echos, all layers, range filter off -->
-        <param name="cloud_all_fields_fullframe" type="string" value="coordinateNotation=3 updateMethod=0 fields=x,y,z,i,range,azimuth,elevation,t,ts,lidar_sec,lidar_nsec,ring,layer,echo,reflector echos=0,1,2 layers=1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16 reflectors=0,1 infringed=0,1 rangeFilter=0,999,0 topic=/cloud_all_fields_fullframe frameid=world publish=1"/>
+        <param name="cloud_all_fields_fullframe" type="string" value="coordinateNotation=3 updateMethod=0 fields=x,y,z,i,range,azimuth,elevation,t,ts,lidar_sec,lidar_nsec,ring,layer,echo,reflector echos=0,1,2 layers=1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16 reflectors=0,1 infringed=0,1 rangeFilter=0,999,0 topic=/lidar1/cloud_all_fields_fullframe frameid=world publish=1"/>
 
         <!-- 
         On ROS-1 and ROS-2, sick_scan_xd publishes TF messsages to map a given base frame (i.e. base coordinates system) to the lidar frame (i.e. lidar coordinates system) and vice versa.
